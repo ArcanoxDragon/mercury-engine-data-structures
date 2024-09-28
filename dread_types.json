@@ -1161,6 +1161,57 @@
         "parent": "CEnemyLifeComponent",
         "fields": {}
     },
+    "CBossRushDebugTime": {
+        "kind": "struct",
+        "parent": null,
+        "fields": {
+            "iDebugTimeHours": "int",
+            "iDebugTimeMinutes": "int",
+            "iDebugTimeSeconds": "int"
+        }
+    },
+    "CBossRushManager::CTunableBossRushManager": {
+        "kind": "struct",
+        "parent": "base::tunable::CTunable",
+        "fields": {
+            "bBossRushGameOverEnabled": "bool",
+            "fDeathAddedTime": "float",
+            "fSurvivalInitialTime": "float",
+            "fSurvivalInitialLife": "float",
+            "fSurvivalInitialMissiles": "float",
+            "iSurvivalMaxLoops": "int",
+            "oLoop0": "CBossRushSurvivalConfiguration",
+            "oLoop1": "CBossRushSurvivalConfiguration",
+            "oLoop2": "CBossRushSurvivalConfiguration",
+            "oLoop3": "CBossRushSurvivalConfiguration",
+            "oCorpiusDebugTime": "CBossRushDebugTime",
+            "oKraidDebugTime": "CBossRushDebugTime",
+            "oArtariaCUDebugTime": "CBossRushDebugTime",
+            "oDrogygaDebugTime": "CBossRushDebugTime",
+            "oStrongRCSDebugTime": "CBossRushDebugTime",
+            "oEscueDebugTime": "CBossRushDebugTime",
+            "oExperimentNo57DebugTime": "CBossRushDebugTime",
+            "oStrongRCSx2DebugTime": "CBossRushDebugTime",
+            "oGolzunaDebugTime": "CBossRushDebugTime",
+            "oEliteCSDebugTime": "CBossRushDebugTime",
+            "oFereniaCUDebugTime": "CBossRushDebugTime",
+            "oRavenBeakDebugTime": "CBossRushDebugTime",
+            "iDebugSurvivalInitialBoss": "int",
+            "fDebugSurvivalRemainingTime": "float",
+            "iDebugSurvivalLoop": "int"
+        }
+    },
+    "CBossRushSurvivalConfiguration": {
+        "kind": "struct",
+        "parent": null,
+        "fields": {
+            "fBossKilledAddedTime": "float",
+            "fBossKilledNoDamageAddedTime": "float",
+            "fLoopCompletedAddedTime": "float",
+            "fCommanderStage1AddedTime": "float",
+            "fCommanderStage2AddedTime": "float"
+        }
+    },
     "CBossSpawnGroupComponent": {
         "kind": "struct",
         "parent": "CSpawnGroupComponent",
@@ -15714,13 +15765,46 @@
             "fVariaSuitDamageMult": "float",
             "fGravitySuitDamageMult": "float",
             "fHyperSuitDamageMult": "float",
+            "fEasyModeDamageMult": "float",
             "fHardModeDamageMult": "float",
             "fMorphImplulseDefaultDamage": "float",
             "fOnDeathMusicsFade": "float",
             "fSlomoInterpTimeDead": "float",
             "fSlomoInterpTimeRevive": "float",
             "fPlayerMaxLifeOverride": "float",
-            "bIgnoreImpact": "bool"
+            "bIgnoreImpact": "bool",
+            "fEasyModeDamageMult_Corpius": "float",
+            "fEasyModeDamageMult_Kraid": "float",
+            "fEasyModeDamageMult_Drogyga": "float",
+            "fEasyModeDamageMult_Experiment57": "float",
+            "fEasyModeDamageMult_RavenBeak": "float",
+            "fEasyModeDamageMult_EliteChozoSoldier": "float",
+            "fEasyModeDamageMult_ChozoSoldierGhavoran": "float",
+            "fEasyModeDamageMult_ChozoSoldierElun": "float",
+            "fEasyModeDamageMult_ChozoSoldierArtaria": "float",
+            "fEasyModeDamageMult_ChozoSoldierHanubia": "float",
+            "fEasyModeDamageMult_ChozoRobotGhavoran": "float",
+            "fEasyModeDamageMult_ChozoRobotFerenia": "float",
+            "fEasyModeDamageMult_ChozoRobotx2Ferenia": "float",
+            "fEasyModeDamageMult_ChozoRobotx2Burenia": "float",
+            "fEasyModeDamageMult_Escue": "float",
+            "fEasyModeDamageMult_Golzuna": "float",
+            "fEasyModeDropAmountFactor_Life": "float",
+            "fEasyModeDropAmountFactor_LifeBig": "float",
+            "fEasyModeDropAmountFactor_Missile": "float",
+            "fEasyModeDropAmountFactor_MissileBig": "float",
+            "fEasyModeDropAmountFactor_PowerBomb": "float",
+            "fEasyModeDropAmountFactor_PowerBombBig": "float",
+            "fEasyModeDropAmountFactor_MiniXLife": "float",
+            "fEasyModeDropAmountFactor_MiniXMissile": "float",
+            "fEasyModeDropAmountFactor_XYellowLife": "float",
+            "fEasyModeDropAmountFactor_XGreenMissile": "float",
+            "fEasyModeDropAmountFactor_XRedLife": "float",
+            "fEasyModeDropAmountFactor_XRedMissile": "float",
+            "fEasyModeDropAmountFactor_XRedPowerBomb": "float",
+            "fEasyModeDropAmountFactor_XOrangePowerBomb": "float",
+            "bEasyModeEnemyProjectileOneHit": "bool",
+            "fEasyModeKraidBouncingCreatureLifeFactor": "float"
         }
     },
     "CPlayerMovement": {
@@ -15935,6 +16019,18 @@
         "kind": "struct",
         "parent": "CEventPropComponent",
         "fields": {}
+    },
+    "CProgressStatsManager::CTunableProgressStatManager": {
+        "kind": "struct",
+        "parent": "base::tunable::CTunable",
+        "fields": {
+            "bDebugEnabled": "bool",
+            "iDebugExtraClearTimeSeconds": "int",
+            "iDebugExtraPlayTimeSeconds": "int",
+            "iDebugExtraPlayerDeaths": "int",
+            "iDebugExtraDamageReceived": "int",
+            "iDebugExtraSaveCount": "int"
+        }
     },
     "CProjectileMovement": {
         "kind": "struct",
