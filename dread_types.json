@@ -19064,6 +19064,11 @@
             "sTunableCallback": "base::global::CStrId"
         }
     },
+    "GUI::CBossRushReport": {
+        "kind": "struct",
+        "parent": "GUI::CDisplayObjectContainer",
+        "field": {}
+    },
     "GUI::CButton": {
         "kind": "struct",
         "parent": "GUI::CDisplayObjectContainer",
@@ -19564,6 +19569,11 @@
         "kind": "struct",
         "parent": "GUI::CDisplayObjectContainer",
         "fields": {}
+    },
+    "GUI::CPopUpGeneric": {
+        "kind": "struct",
+        "parent": "GUI::CDisplayObjectContainer",
+        "field": {}
     },
     "GUI::CPowerDescriptionButton": {
         "kind": "struct",
